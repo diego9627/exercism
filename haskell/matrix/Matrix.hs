@@ -39,4 +39,4 @@ fromString = fromList . map stringToList . lines
           _          -> []
 
 fromList :: [[a]] -> Matrix a
-fromList = M . V.fromList . map V.fromList
+fromList  = M . toVectorOf (traverse.vector) 
